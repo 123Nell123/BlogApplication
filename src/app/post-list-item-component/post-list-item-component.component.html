@@ -1,0 +1,75 @@
+<div class="container">
+
+<li class="list-groupe-item">
+
+
+<div style="width:20px;height:20px;background-color:red"
+*ngIf="monHumeur === true">
+</div>
+
+<div style="width:20px;height:20px;background-color:blue"
+*ngIf="monHumeur === false">
+</div>
+
+
+<div class="row">  
+
+    <h4>{{getpostTitle()}} </h4>
+    <input type="text" class="form-control" [(ngModel)]="title">
+</div>
+
+
+
+
+
+<div class="row">
+                 
+        <p class="text-right">{{ created_at  | date: 'short'  }}</p>
+   
+</div>
+
+
+
+<div class="row">
+<!--  permet à l'utilisateur de modifier des infos dans le back-->
+<p>{{getContent()}}</p>
+
+
+</div>
+
+<div class="row">
+
+
+
+<input type="text" class="form-control" [(ngModel)]="content">
+
+
+
+
+<!--  compteur de  vote-->
+<!-- 1  affichage du compteur-->
+<!-- 2  liee avec l'event du button-->
+<!-- 3  mettre a jour la valeur du button-->
+<!-- 4  fournir la valeur a l'objet POST-->
+<p>ici on a    {{getLoveIt()}} love</p>
+
+                
+  </div>
+
+
+ 
+<!-- button de vote-->
+<!--1 on affiche -- un bouton de vote love it // doon't love it
+-->
+
+<!--2 incrementation du champs love its en fonction du nombre de cliques
+-->
+
+<button class="btn btn-warning" [disabled]="monHumeur"> cliques moi alors </button>
+
+ <button class="btn btn-success" (click)="onIncrementLoveIts()"> love it ? </button>
+ <button class="btn btn-danger" (click)="onIncrementNoLoveIts()"> don't love it ?</button>
+
+</li>
+
+</div>

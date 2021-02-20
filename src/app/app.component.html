@@ -1,0 +1,41 @@
+
+
+<div class = "container">
+<div class = "row">
+
+    <h4 [ngStyle]="{color:getColor()}"> 
+       {{title}}
+      
+    </h4>
+</div>
+
+
+<div class = "row">
+   
+
+<ul class="list-groupe">
+
+
+<li class="list-groupe-item">
+<app-post-list-item-component *ngFor="let mesPost of posts"
+            [title]= "mesPost.title"
+         [content]= "mesPost.content">
+</app-post-list-item-component>
+
+
+
+</li>
+<div class = "row">
+
+<button class="btn btn-success" (click)="ajouterUnPost()"> Ecrire Un Post </button>
+<button class="btn btn-danger" (click)="effacerUnPost()"> Supprimer Un Post </button>
+</div>
+
+
+</ul>
+
+</div>
+
+
+
+</div>
